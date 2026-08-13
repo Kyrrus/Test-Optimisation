@@ -88,7 +88,7 @@ Les conventions suivantes sont appliquées :
 - une seule anomalie agrégée est produite par métrique ;
 - le nombre d’occurrences correspond au seuil de la sévérité affichée.
 
-Les valeurs de config.py sont donc des seuils de démonstration (pas de suils fournis dans le sujet), regroupés dans un seul fichier
+Les valeurs de config.py sont des seuils de démonstration (pas de seuils fournis dans le sujet), regroupés dans un seul fichier
 pour pouvoir être remplacés facilement. Dans un environnement réel, ils seraient
 calibrés à partir de l’historique et des objectifs de service de l’infrastructure.
 
