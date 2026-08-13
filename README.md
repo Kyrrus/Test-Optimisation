@@ -80,7 +80,7 @@ Les conventions suivantes sont appliquées :
 
 - timestamp correspond au relevé le plus récent ;
 - average_latency_ms est la moyenne des latences ;
-- max_cpu_usage et `max_memory_usage` sont les maxima observés ;
+- max_cpu_usage et max_memory_usage sont les maxima observés ;
 - error_rate est la moyenne des taux d’erreur ;
 - uptime_seconds provient du relevé le plus récent ;
 - service_status_summary décrit l’état du relevé le plus récent ;
