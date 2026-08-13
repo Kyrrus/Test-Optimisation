@@ -1,0 +1,112 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.local/infrastructure-report.schema.json",
+  "title": "Infrastructure analysis report",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "timestamp",
+    "insights",
+    "anomalies",
+    "recommendations",
+    "service_status_summary"
+  ],
+  "properties": {
+    "timestamp": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "insights": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "average_latency_ms",
+        "max_cpu_usage",
+        "max_memory_usage",
+        "error_rate",
+        "uptime_seconds"
+      ],
+      "properties": {
+        "average_latency_ms": { "type": "number" },
+        "max_cpu_usage": { "type": "number" },
+        "max_memory_usage": { "type": "number" },
+        "error_rate": { "type": "number" },
+        "uptime_seconds": { "type": "number" }
+      }
+    },
+    "anomalies": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "metric",
+          "value",
+          "threshold",
+          "severity",
+          "description"
+        ],
+        "properties": {
+          "metric": { "type": "string" },
+          "value": { "type": "number" },
+          "threshold": { "type": "number" },
+          "severity": {
+            "type": "string",
+            "enum": ["low", "medium", "high"]
+          },
+          "description": { "type": "string" }
+        }
+      }
+    },
+    "recommendations": {
+      "type": "array",
+      "minItems": 1,
+      "maxItems": 5,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "id",
+          "action",
+          "target",
+          "parameters",
+          "benefit_estimate"
+        ],
+        "properties": {
+          "id": { "type": "string" },
+          "action": { "type": "string" },
+          "target": {
+            "type": "string",
+            "enum": ["database", "api_gateway", "cache", "infrastructure"]
+          },
+          "parameters": {
+            "type": "object",
+            "additionalProperties": {
+              "type": ["string", "number", "boolean"]
+            }
+          },
+          "benefit_estimate": { "type": "string" }
+        }
+      }
+    },
+    "service_status_summary": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["online", "degraded", "offline"],
+      "properties": {
+        "online": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "degraded": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "offline": {
+          "type": "array",
+          "items": { "type": "string" }
+        }
+      }
+    }
+  }
+}

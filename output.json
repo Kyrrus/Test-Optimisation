@@ -1,0 +1,126 @@
+{
+  "timestamp": "2023-10-11T21:30:00Z",
+  "insights": {
+    "average_latency_ms": 156.018,
+    "max_cpu_usage": 99.0,
+    "max_memory_usage": 92.0,
+    "error_rate": 0.032,
+    "uptime_seconds": 1258200
+  },
+  "anomalies": [
+    {
+      "metric": "cpu_usage",
+      "value": 99.0,
+      "threshold": 90.0,
+      "severity": "high",
+      "description": "cpu_usage : pic de 99. 49/500 relevés atteignent ou dépassent le seuil high de 90."
+    },
+    {
+      "metric": "memory_usage",
+      "value": 92.0,
+      "threshold": 90.0,
+      "severity": "high",
+      "description": "memory_usage : pic de 92. 18/500 relevés atteignent ou dépassent le seuil high de 90."
+    },
+    {
+      "metric": "latency_ms",
+      "value": 384.0,
+      "threshold": 300.0,
+      "severity": "high",
+      "description": "latency_ms : pic de 384. 49/500 relevés atteignent ou dépassent le seuil high de 300."
+    },
+    {
+      "metric": "disk_usage",
+      "value": 97.0,
+      "threshold": 95.0,
+      "severity": "high",
+      "description": "disk_usage : pic de 97. 11/500 relevés atteignent ou dépassent le seuil high de 95."
+    },
+    {
+      "metric": "io_wait",
+      "value": 14.0,
+      "threshold": 10.0,
+      "severity": "medium",
+      "description": "io_wait : pic de 14. 49/500 relevés atteignent ou dépassent le seuil medium de 10."
+    },
+    {
+      "metric": "error_rate",
+      "value": 0.13,
+      "threshold": 0.1,
+      "severity": "high",
+      "description": "error_rate : pic de 0.13. 49/500 relevés atteignent ou dépassent le seuil high de 0.1."
+    },
+    {
+      "metric": "temperature_celsius",
+      "value": 89.0,
+      "threshold": 85.0,
+      "severity": "high",
+      "description": "temperature_celsius : pic de 89. 26/500 relevés atteignent ou dépassent le seuil high de 85."
+    }
+  ],
+  "recommendations": [
+    {
+      "id": "REC-001",
+      "action": "Répartition de charge pour réduire la charge sur les serveurs",
+      "target": "infrastructure",
+      "parameters": {
+        "metric": "cpu_usage",
+        "value": 99.0,
+        "threshold": 90.0
+      },
+      "benefit_estimate": "Réduction de la charge sur les serveurs et amélioration de leur disponibilité"
+    },
+    {
+      "id": "REC-002",
+      "action": "Ajustement des ressources pour répondre à la demande en mémoire",
+      "target": "infrastructure",
+      "parameters": {
+        "metric": "memory_usage",
+        "value": 92.0,
+        "threshold": 90.0
+      },
+      "benefit_estimate": "Amélioration de l'efficacité de l'utilisation des ressources en mémoire"
+    },
+    {
+      "id": "REC-003",
+      "action": "Optimisation des entrées/sorties pour réduire la latence",
+      "target": "infrastructure",
+      "parameters": {
+        "metric": "latency_ms",
+        "value": 384.0,
+        "threshold": 300.0
+      },
+      "benefit_estimate": "Réduction de la latence et amélioration de la performance globale"
+    },
+    {
+      "id": "REC-004",
+      "action": "Nettoyage du stockage pour libérer de l'espace disque",
+      "target": "infrastructure",
+      "parameters": {
+        "metric": "disk_usage",
+        "value": 97.0,
+        "threshold": 95.0
+      },
+      "benefit_estimate": "Libération d'espace disque et amélioration de la performance des opérations de stockage"
+    },
+    {
+      "id": "REC-005",
+      "action": "Réplication des données pour garantir la disponibilité du cache",
+      "target": "cache",
+      "parameters": {
+        "type": "degraded",
+        "occurrences": 34
+      },
+      "benefit_estimate": "Garantie de la disponibilité du cache et amélioration de la performance globale"
+    }
+  ],
+  "service_status_summary": {
+    "online": [
+      "database",
+      "api_gateway",
+      "cache"
+    ],
+    "degraded": [],
+    "offline": []
+  }
+}
