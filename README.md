@@ -5,9 +5,9 @@ un modèle local Ollama pour générer des recommandations d’optimisation.
 
 ## Prérequis
 
-- Python 3.11 ou supérieur ;
-- `pip`, normalement fourni avec Python ;
-- Ollama installé et démarré.
+- Python 3.11 ou supérieur
+- pip
+- Ollama installé et démarré
 
 ## Création de l’environnement virtuel
 
@@ -78,12 +78,12 @@ Seul le nœud de recommandations utilise le LLM.
 
 Les conventions suivantes sont appliquées :
 
-- `timestamp` correspond au relevé le plus récent ;
-- `average_latency_ms` est la moyenne des latences ;
-- `max_cpu_usage` et `max_memory_usage` sont les maxima observés ;
-- `error_rate` est la moyenne des taux d’erreur ;
-- `uptime_seconds` provient du relevé le plus récent ;
-- `service_status_summary` décrit l’état du relevé le plus récent ;
+- timestamp correspond au relevé le plus récent ;
+- average_latency_ms est la moyenne des latences ;
+- max_cpu_usage et `max_memory_usage` sont les maxima observés ;
+- error_rate est la moyenne des taux d’erreur ;
+- uptime_seconds provient du relevé le plus récent ;
+- service_status_summary décrit l’état du relevé le plus récent ;
 - les incidents historiques sont utilisés pour créer les recommandations ;
 - une seule anomalie agrégée est produite par métrique ;
 - le nombre d’occurrences correspond au seuil de la sévérité affichée.
@@ -146,10 +146,10 @@ output.json
 output.schema.json
 ```
 
-## Contrat de sortie
+## Schéma de sortie
 
-Les modèles Pydantic valident le rapport avant son écriture. Le contrat indépendant
-est également disponible dans `output.schema.json`.
+Les modèles Pydantic valident le rapport avant son écriture. Le schéma
+est également disponible dans output.schema.json.
 
 ## Choix techniques
 
