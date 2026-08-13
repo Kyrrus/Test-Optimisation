@@ -1,5 +1,3 @@
-"""Étapes du pipeline d'analyse de l'infrastructure."""
-
 import json
 from dataclasses import dataclass
 from datetime import timezone
